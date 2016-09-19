@@ -23,5 +23,6 @@ Features:
 Limitations:
 * You cannot send message without first selecting message recipient
 * You won't receive `typing...` and `New Message` if your chat window is already focused to that recipient
+* New member will automatically get displayed and left members will be removed
 
 Thank you...!!!

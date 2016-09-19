@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Chat Application</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css">
+		<script type="text/javascript" src="/lib/socket.io-1.2.0.js"></script>
+		<script type="text/javascript" src="/lib/angular.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
+	</head>
+	<body ng-app="chatApp">
+		<div class="container-fluid" ng-controller="chatController">
+			<div class="row">
+				<div class="col-md-9">
+					<p class="bg-primary">{{default.current}}</p>
+					<ul id="msgContainer">
+						<li ng-repeat="(key, user) in default.users">
+							<ul id="{{user.name}}" class="messages" ng-if="user.name !== default.me" ng-show="default.current === user.name">
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<p class="bg-primary">Online Users</p>
+					<ul id="online">
+						<li ng-repeat="(key, user) in default.users" ng-click="switchMsgContainer(user.name)">
+							<div class="bg-success" ng-if="user.name !== default.me">
+								<p>{{user.name}}</p>
+								<small>{{user.status}}</small>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<form id="form" action="" onsubmit="return false" > 
+					<input autocomplete="off" ng-keyup="notifyTyping($event);" placeholder="Type yor message here.." ng-model="default.message" />
+				</form>
+			</div>
+		</div>
+		
+		<script src="/lib/jquery-1.11.1.js"></script>
+	</body>
+</html>
