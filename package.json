@@ -6,12 +6,19 @@
   "scripts": {
     "start": "node ./index"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalay-brainvire/real-time-chat.git"
+  },
   "author": {
     "name": "Jalay Simaria",
     "email": "jalay.simaria18@yahoo.com",
     "url": "http://jalay.in/"
   },
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jalay-brainvire/real-time-chat/issues"
+  },
   "dependencies": {
     "express": "^4.14.0",
     "socket.io": "^1.4.8"
