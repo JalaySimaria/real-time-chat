@@ -47,8 +47,46 @@ small {
 	padding: 5px;
 }
 .opposite {
-	background-color: #eee;
+    position: relative;
+    background: #99ee75;
+    margin-right: 20% !important;
+}
+.opposite:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(153, 238, 117, 0);
+    border-right-color: #99ee75;
+    border-width: 13px;
+    margin-top: -13px;
 }
 .me {
-	text-align: right;
+    position: relative;
+    background: silver;
+    text-align: right;
+    margin-left: 20% !important;
+}
+.me:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(238, 238, 238, 0);
+    border-left-color: silver;
+    border-width: 13px;
+    margin-top: -13px;
+}
+.messages li {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
 }

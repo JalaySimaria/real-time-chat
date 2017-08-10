@@ -8,6 +8,7 @@ exports.start = function(route, handle) {
 		  url		= require("url");
 
 	app.use(express.static('public'));
+	app.set('port', (process.env.PORT || 5000));
 
 	app.all('*', function(request, response) {
 		let pathname = url.parse(request.url).pathname;
@@ -16,7 +17,7 @@ exports.start = function(route, handle) {
 
 	io.startSocket(http);
 
-	http.listen(process.argv[3], process.argv[2], function(){
-		console.log('Application started at http://' + process.argv[2] + ':' + process.argv[3]);
+	http.listen(app.get('port'), function(){
+		console.log('Application started.');
 	});	
 };
