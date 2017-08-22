@@ -1,4 +1,4 @@
-# Real Time Chat Application
+# Real Time Chat Application ([Live Demo](https://realtimechat-jalay.herokuapp.com))
 A real time chat application using NodeJS/Express/Socker.io/AngularJS.
 
 Steps to run application:
